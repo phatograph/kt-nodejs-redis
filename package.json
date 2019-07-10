@@ -1,0 +1,24 @@
+{
+  "name": "kt-nodejs-redis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kullapat-t/kt-nodejs-redis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kullapat-t/kt-nodejs-redis/issues"
+  },
+  "homepage": "https://github.com/kullapat-t/kt-nodejs-redis#readme"
+}
