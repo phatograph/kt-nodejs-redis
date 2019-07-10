@@ -1,5 +1,5 @@
 const express = require('express');
-const {validateDate} = require('./connector/redis-connector2')
+const {validateDate} = require('./connector/redis-connector3')
 const app = express()
 const port = 3000
 
@@ -11,11 +11,9 @@ client.set('x', '1');  // Manually set redis key/value, needs to be removed in r
 app.get('/', (req, res) => {
   // http://localhost:3000/?id=5d21d19cdf68f60d202c1dac&date=1562660653
 
-  validateDate(req.query.id, req.query.date)
-    .then((response) => {
-      console.log(response)
-      res.send(response)
-    })
+  validateDate(req.query.id, req.query.date, (response) => {
+    res.send(response)
+  })
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
