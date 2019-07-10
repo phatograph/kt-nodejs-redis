@@ -11,6 +11,13 @@ client.set('x', '1');  // Manually set redis key/value, needs to be removed in r
 app.get('/', (req, res) => {
   // http://localhost:3000/?id=5d21d19cdf68f60d202c1dac&date=1562660653
 
+  // connector2
+  // validateDate(req.query.id, req.query.date)
+  //   .then((response) => {
+  //     res.send(response)
+  //   })
+
+  // connector3
   validateDate(req.query.id, req.query.date, (response) => {
     res.send(response)
   })
