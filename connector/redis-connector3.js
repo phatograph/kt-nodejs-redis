@@ -2,10 +2,29 @@ const redis = require('redis')
 const client = redis.createClient()
 
 const validateDate = (userId, date, callback) => {
-  console.log(`validate userId: [${userId}] . . .`);
+  client.get(userId, (e, currentDate) => {
+    if (date == currentDate) {
+      callback({
+        status: 200,
+      })
+    }
+    else if (date < currentDate) {
+      callback({
+        status: 400,
+      })
+    }
+    else {
+      saveData(userId, date, callback)
+    }
+  })
+}
 
-  client.get('x', (e, response) => {
-    callback(response)
+const saveData = (userId, date, callback) => {
+  client.set(userId, date, (err, reply) => {
+    callback({
+      status: 202,
+      date,
+    })
   })
 }
 

@@ -6,7 +6,7 @@ const port = 3000
 const redis = require('redis')
 const client = redis.createClient()
 
-client.set('x', '1');  // Manually set redis key/value, needs to be removed in real run
+// client.set('5d21d19cdf68f60d202c1dac', '1562660653');  // Manually set redis key/value, needs to be removed in real run
 
 app.get('/', (req, res) => {
   // http://localhost:3000/?id=5d21d19cdf68f60d202c1dac&date=1562660653
